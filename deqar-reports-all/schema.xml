@@ -440,22 +440,25 @@
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="city" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="country" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="deqar_id" type="string" uninvertible="true" indexed="true" stored="true"/>
-  <field name="eter_id" type="string" uninvertible="true" indexed="true" stored="true"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
-  <field name="name_english" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_official" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_official_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_primary" type="string" indexed="true" stored="true"/>
-  <field name="name_select_display" type="string" indexed="true" stored="true"/>
-  <field name="name_sort" type="text_gen_sort" uninvertible="true" indexed="true" required="true"/>
-  <field name="name_version" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_version_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="national_identifier" type="string" uninvertible="true" indexed="true" stored="true"/>
-  <field name="place" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="website_link" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="agency" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="local_id" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="country" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="city" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="activity_type" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="activity" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="institution_programme_sort" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="institution_programme_primary" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="institution_name_english" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="institution_name_official" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="institution_name_official_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="institution_name_version" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="institution_name_version_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="programme_name" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  <field name="flag_level" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="valid_from" type="pdate" uninvertible="true" indexed="true" stored="true"/>
+  <field name="valid_to" type="pdate" uninvertible="true" indexed="true" stored="true"/> 
+  <field name="valid_to_calculated" type="pdate" uninvertible="true" indexed="true" stored="false"/> 
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
