@@ -459,6 +459,9 @@
   <field name="valid_from" type="pdate" uninvertible="true" indexed="true" stored="true"/>
   <field name="valid_to" type="pdate" uninvertible="true" indexed="true" stored="true"/> 
   <field name="valid_to_calculated" type="pdate" uninvertible="true" indexed="true" stored="false"/> 
+  <field name="user_created" type="string" uninvertible="true" indexed="true" stored="false"/>
+  <field name="date_created" type="pdate" uninvertible="true" indexed="true" stored="true"/> 
+  <field name="date_updated" type="pdate" uninvertible="true" indexed="true" stored="true"/> 
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
