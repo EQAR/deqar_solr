@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
 <schema name="default-config" version="1.6">
   <uniqueKey>id</uniqueKey>
   <fieldType name="ancestor_path" class="solr.TextField">
@@ -137,20 +138,20 @@
     <analyzer type="index">
       <tokenizer class="solr.StandardTokenizerFactory"/>
       <filter class="solr.StopFilterFactory" words="lang/stopwords_en.txt" ignoreCase="true"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
       <filter class="solr.EnglishPossessiveFilterFactory"/>
       <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
       <filter class="solr.PorterStemFilterFactory"/>
-      <filter class="solr.ICUFoldingFilterFactory"/>
       <filter class="solr.EdgeNGramTokenizerFactory" minGramSize="1" maxGramSize="50"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer class="solr.StandardTokenizerFactory"/>
       <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt"/>
       <filter class="solr.StopFilterFactory" words="lang/stopwords_en.txt" ignoreCase="true"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
       <filter class="solr.EnglishPossessiveFilterFactory"/>
       <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
       <filter class="solr.PorterStemFilterFactory"/>
-      <filter class="solr.ICUFoldingFilterFactory"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_en_splitting" class="solr.TextField" autoGeneratePhraseQueries="true" positionIncrementGap="100">
@@ -253,6 +254,7 @@
     <analyzer type="index">
       <tokenizer class="solr.StandardTokenizerFactory"/>
       <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+      <filter class="solr.ICUFoldingFilterFactory"/>
       <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
     <analyzer type="query">
@@ -262,11 +264,12 @@
       <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
   </fieldType>
-  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
       <tokenizer class="solr.StandardTokenizerFactory"/>
       <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
       <filter class="solr.ICUFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
       <filter class="solr.EdgeNGramTokenizerFactory" minGramSize="1" maxGramSize="50"/>
     </analyzer>
     <analyzer type="query">
@@ -274,6 +277,7 @@
       <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
       <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt"/>
       <filter class="solr.ICUFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
   </fieldType>
   <fieldType name="text_general_rev" class="solr.TextField" positionIncrementGap="100">
@@ -440,24 +444,60 @@
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="city" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="city_search" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="country" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="country_search" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
+  
+  <!-- Display fields -->
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="deqar_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
   <field name="eter_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
-  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
-  <field name="name_english" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_official" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_official_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="name_primary" type="string" indexed="true" stored="true"/>
+  <field name="name_official" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
+  <field name="national_identifier" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="website_link" type="string" indexed="false" stored="true"/>
+  <field name="place" type="string" indexed="false" stored="true"/>
+  <field name="hierarchical_relationships" type="string" indexed="false" stored="true"/>
+  <field name="qf_ehea_level" type="string" multiValued="true" indexed="false" stored="true"/>
+
+  <!-- Search fields -->
+  <field name="name_english" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  <field name="name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="name_select_display" type="string" indexed="true" stored="true"/>
-  <field name="name_sort" type="text_gen_sort" uninvertible="true" indexed="true" required="true"/>
   <field name="name_version" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="name_version_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="national_identifier" type="string" uninvertible="true" indexed="true" stored="true"/>
-  <field name="place" type="strings" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
-  <field name="website_link" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="city" type="text_en" multiValued="true" indexed="true" stored="false"/>  
+  <field name="country" type="text_en_splitting" multiValued="true" indexed="true" stored="true"/>
+
+  <!-- ID Filter fields -->
+  <field name="agency_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+  <field name="activity_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+  <field name="activity_type_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+  <field name="country_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+  <field name="status_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+  <field name="qf_ehea_level_id" type="pints" multiValued="true" indexed="true" stored="false"/>
+
+  <!-- Sort fields -->
+  <field name="name_sort" type="text_gen_sort" uninvertible="true" indexed="true" required="true"/>
+
+  <!-- Aggregated search fields -->
+  <field name="aggregated_name_english" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_name_official" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_name_version" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_name_version_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_city" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  <field name="aggregated_country" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  
+  <!-- Facet fields -->
+  <field name="reports_agencies" type="strings" multiValued="true" indexed="true" stored="false"/>
+  <field name="activity_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
+  <field name="activity_type_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
+  <field name="country_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
+  <field name="status_facet" type="string" multiValued="true" indexed="true" stored="true"/>
+  <field name="crossborder_facet" type="boolean" multiValued="true" indexed="true" stored="true"/>
+  <field name="qf_ehea_level_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
+
+  <!-- Report indicator -->
+  <field name="has_report" type="boolean" default="false" indexed="true" required="true" stored="true"/>
+  
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
