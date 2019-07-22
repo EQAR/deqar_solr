@@ -451,7 +451,8 @@
   <field name="deqar_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
   <field name="eter_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
   <field name="name_primary" type="string" indexed="true" stored="true"/>
-  <field name="name_official" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
+  <field name="name_select_display" type="string" indexed="true" stored="true"/>
+  <field name="name_official_display" type="string" indexed="true" stored="true"/>
   <field name="national_identifier" type="string" multiValued="false" indexed="true" stored="true"/>
   <field name="website_link" type="string" indexed="false" stored="true"/>
   <field name="place" type="string" indexed="false" stored="true"/>
@@ -460,8 +461,8 @@
 
   <!-- Search fields -->
   <field name="name_english" type="text_en" multiValued="true" indexed="true" stored="false"/>
+  <field name="name_official" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
   <field name="name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_select_display" type="string" indexed="true" stored="true"/>
   <field name="name_version" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="name_version_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="city" type="text_en" multiValued="true" indexed="true" stored="false"/>  
