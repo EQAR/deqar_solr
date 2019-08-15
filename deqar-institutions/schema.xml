@@ -451,6 +451,7 @@
   <field name="deqar_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
   <field name="eter_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
   <field name="name_primary" type="string" indexed="true" stored="true"/>
+  <field name="name_display" type="string" indexed="false" stored="true"/>
   <field name="name_select_display" type="string" indexed="true" stored="true"/>
   <field name="name_official_display" type="string" indexed="true" stored="true"/>
   <field name="national_identifier" type="string" multiValued="false" indexed="true" stored="true"/>
