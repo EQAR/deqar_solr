@@ -466,7 +466,7 @@
   <field name="name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="name_version" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="name_version_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="city" type="text_en" multiValued="true" indexed="true" stored="false"/>  
+  <field name="city" type="text_en" multiValued="true" indexed="true" stored="true"/>  
   <field name="country" type="text_en_splitting" multiValued="true" indexed="true" stored="true"/>
 
   <!-- ID Filter fields -->
