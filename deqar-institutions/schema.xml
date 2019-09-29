@@ -479,7 +479,7 @@
 
   <!-- Sort fields -->
   <field name="name_sort" type="text_sort" uninvertible="true" indexed="true" required="true"/>
-  <field name="deqar_id_sort" type="string" uninvertible="true" indexed="true" required="true"/>
+  <field name="deqar_id_sort" type="pint" uninvertible="true" indexed="true" required="true"/>
   <field name="eter_id_sort" type="string" uninvertible="true" indexed="true"/>
 
   <!-- Aggregated search fields -->
