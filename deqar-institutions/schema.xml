@@ -443,6 +443,15 @@
     </analyzer>
   </fieldType>
 
+  <fieldType name="alphaSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
+    <analyzer>
+      <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <filter class="solr.ICUFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory" />
+      <filter class="solr.TrimFilterFactory" />
+    </analyzer>
+  </fieldType>
+
   <fieldType name="alphaNumericSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
     <analyzer>
       <!-- KeywordTokenizer does no actual tokenizing, so the entire
@@ -506,7 +515,7 @@
   <field name="qf_ehea_level_id" type="pints" multiValued="true" indexed="true" stored="false"/>
 
   <!-- Sort fields -->
-  <field name="name_sort" type="text_sort" uninvertible="true" indexed="true" required="true"/>
+  <field name="name_sort" type="alphaSort" uninvertible="true" indexed="true" required="true"/>
   <field name="deqar_id_sort" type="alphaNumericSort" uninvertible="true" indexed="true" required="true"/>
   <field name="eter_id_sort" type="alphaNumericSort" uninvertible="true" indexed="true"/>
 
