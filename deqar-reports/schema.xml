@@ -441,6 +441,15 @@
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
   
+  <fieldType name="alphaSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
+    <analyzer>
+      <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <filter class="solr.ICUFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory" />
+      <filter class="solr.TrimFilterFactory" />
+    </analyzer>
+  </fieldType>
+
   <!-- Display fields -->
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
   <field name="local_id" type="text_general" uninvertible="true" indexed="true" stored="true"/>
@@ -493,6 +502,7 @@
 
   <!-- Sort fields -->
   <field name="id_sort" type="pint" uninvertible="true" indexed="true" stored="false"/>
+  <field name="agency_sort" type="alphaSort" uninvertible="true" indexed="true" required="true"/>
   <field name="institution_programme_sort" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
 
   <!-- Facet fields -->
