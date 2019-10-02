@@ -442,6 +442,20 @@
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
     </analyzer>
   </fieldType>
+  
+  <fieldType name="idSearch" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.PatternReplaceFilterFactory" pattern="deqarinst" replacement="" replace="all" />
+      <filter class="solr.EdgeNGramTokenizerFactory" minGramSize="1" maxGramSize="50"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.PatternReplaceFilterFactory" pattern="deqarinst" replacement="" replace="all" />
+    </analyzer>
+  </fieldType>
 
   <fieldType name="alphaSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
     <analyzer>
@@ -498,6 +512,7 @@
   <field name="qf_ehea_level" type="string" multiValued="true" indexed="false" stored="true"/>
 
   <!-- Search fields -->
+  <field name="deqar_id_search" type="idSearch" uninvertible="true" indexed="true" stored="true"/>
   <field name="name_english" type="text_en" multiValued="true" indexed="true" stored="false"/>
   <field name="name_official" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
   <field name="name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
