@@ -437,6 +437,16 @@
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
     </analyzer>
   </fieldType>
+  
+  <fieldType name="alphaSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
+    <analyzer>
+      <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <filter class="solr.ICUFoldingFilterFactory"/>
+      <filter class="solr.LowerCaseFilterFactory" />
+      <filter class="solr.TrimFilterFactory" />
+    </analyzer>
+  </fieldType>
+
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
@@ -463,9 +473,9 @@
 
   <!-- Sort fields -->
   <field name="deqar_id_sort" type="pint" uninvertible="true" indexed="true" stored="false"/>
-  <field name="acronym_sort" type="text_gen_sort" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="name_sort" type="text_gen_sort" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
-  <field name="country_sort" type="text_gen_sort" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="acronym_sort" type="alphaSort" uninvertible="true" indexed="true" stored="false"/>
+  <field name="name_sort" type="alphaSort" uninvertible="true" indexed="true" stored="false"/>
+  <field name="country_sort" type="alphaSort" uninvertible="true" indexed="true" stored="false"/>
 
   <!-- Facet fields -->
   <field name="country_facet" type="string" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
