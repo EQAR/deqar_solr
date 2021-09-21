@@ -456,6 +456,7 @@
   <field name="agency_name" type="string" indexed="false" stored="true"/>
   <field name="agency_acronym" type="string" indexed="false" stored="true"/>
   <field name="agency_url" type="string" indexed="false" stored="true"/>
+  <field name="contributing_agencies" type="string" indexed="false" stored="true"/>
   <field name="agency_esg_activity" type="string" indexed="false" stored="true"/>
   <field name="agency_esg_activity_type" type="string" indexed="false" stored="true"/>
   <field name="name" type="string" indexed="false" stored="true"/>
@@ -492,7 +493,7 @@
   <field name="valid_to_calculated" type="pdate" uninvertible="true" indexed="true" stored="true"/> 
 
   <!-- ID Filter fields -->
-  <field name="agency_id" type="pint" indexed="true" stored="true"/>
+  <field name="agency_id" type="pint"  multiValued="true" indexed="true" stored="true"/>
   <field name="country_id" type="pints" uninvertible="true" indexed="true" stored="false"/>
   <field name="activity_id" type="pint" indexed="true" stored="false"/>
   <field name="activity_type_id" type="pint" indexed="true" stored="false"/>
@@ -506,7 +507,7 @@
   <field name="institution_programme_sort" type="string" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
 
   <!-- Facet fields -->
-  <field name="agency_facet" type="string" uninvertible="true" indexed="true" stored="true"/>
+  <field name="agency_facet" type="string"  multiValued="true" uninvertible="true" indexed="true" stored="true"/>
   <field name="country_facet" type="strings" multiValued="true" uninvertible="true" indexed="true" stored="true"/>
   <field name="activity_facet" type="string" indexed="true" stored="true"/>
   <field name="activity_type_facet" type="string" indexed="true" stored="true"/>
