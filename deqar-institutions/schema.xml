@@ -506,6 +506,8 @@
   <field name="name_select_display" type="string" indexed="true" stored="true"/>
   <field name="name_official_display" type="string" indexed="true" stored="true"/>
   <field name="national_identifier" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="founding_date" type="string" indexed="false" stored="true"/>
+  <field name="closure_date" type="string" indexed="false" stored="true"/>
   <field name="website_link" type="string" indexed="false" stored="true"/>
   <field name="place" type="string" indexed="false" stored="true"/>
   <field name="hierarchical_relationships" type="string" indexed="false" stored="true"/>
