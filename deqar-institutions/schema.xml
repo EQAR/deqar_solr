@@ -515,6 +515,7 @@
 
   <!-- Search fields -->
   <field name="deqar_id_search" type="idSearch" uninvertible="true" indexed="true" stored="true"/>
+  <field name="acronym_search" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="name_english" type="text_en" multiValued="true" indexed="true" stored="false"/>
   <field name="name_official" type="text_general" docValues="false" multiValued="true" indexed="true" stored="true"/>
   <field name="name_official_transliterated" type="text_general" multiValued="true" indexed="true" stored="false"/>
