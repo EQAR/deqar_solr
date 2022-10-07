@@ -458,12 +458,16 @@
   <field name="agency_acronym" type="string" indexed="false" stored="true"/>
   <field name="agency_url" type="string" indexed="false" stored="true"/>
   <field name="contributing_agencies" type="string" indexed="false" stored="true"/>
+  <field name="country" type="string" multiValued="true" indexed="true" stored="true"/>
+  <field name="countries" type="string" indexed="false" stored="true"/>
+  <field name="city" type="string" multiValued="true" indexed="false" stored="true"/>
   <field name="agency_esg_activity" type="string" indexed="false" stored="true"/>
   <field name="agency_esg_activity_type" type="string" indexed="false" stored="true"/>
   <field name="name" type="string" indexed="false" stored="true"/>
   <field name="institutions" type="string" indexed="false" stored="true"/>
   <field name="institutions_hierarchical" type="string" indexed="false" stored="true"/>
   <field name="institutions_historical" type="string" indexed="false" stored="true"/>
+  <field name="institutions_additional" type="string" multiValued="true" indexed="false" stored="true"/>
   <field name="programmes" type="string" indexed="false" stored="true"/>
   <field name="institution_programme_primary" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="true"/>
   <field name="report_valid" type="boolean" indexed="false" stored="true"/>
@@ -483,8 +487,8 @@
 
   <!-- Search fields -->
   <field name="id_search" type="text_general" multiValued="false" indexed="true" stored="false"/>
-  <field name="country" type="text_en_splitting" multiValued="true" indexed="true" stored="true"/>
-  <field name="city" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
+  <field name="country_search" type="text_en_splitting" multiValued="true" indexed="true" stored="false"/>
+  <field name="city_search" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="institution_name_english" type="text_en" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="institution_name_official" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
   <field name="institution_name_official_transliterated" type="text_general" uninvertible="true" multiValued="true" indexed="true" stored="false"/>
