@@ -499,6 +499,7 @@
 
   <!-- ID Filter fields -->
   <field name="agency_id" type="pint"  multiValued="true" indexed="true" stored="true"/>
+  <field name="institution_id" type="pint"  multiValued="true" indexed="true" stored="false"/>
   <field name="country_id" type="pints" uninvertible="true" indexed="true" stored="false"/>
   <field name="activity_id" type="pint" indexed="true" stored="false"/>
   <field name="activity_type_id" type="pint" indexed="true" stored="false"/>
