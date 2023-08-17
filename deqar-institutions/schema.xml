@@ -250,7 +250,6 @@
       <filter class="solr.SnowballPorterFilterFactory" language="Irish"/>
     </analyzer>
   </fieldType>
-  <fieldType name="text_sort" class="solr.ICUCollationField" locale="" strength="primary" />
   <fieldType name="text_gen_sort" class="solr.SortableTextField" positionIncrementGap="100" multiValued="true">
     <analyzer type="index">
       <tokenizer class="solr.StandardTokenizerFactory"/>
@@ -553,6 +552,7 @@
   <field name="country_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
   <field name="status_facet" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="crossborder_facet" type="boolean" multiValued="true" indexed="true" stored="true"/>
+  <field name="alternative_provider_facet" type="boolean" multiValued="false" indexed="true" stored="true"/>
   <field name="qf_ehea_level_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
 
   <!-- Report indicator -->
