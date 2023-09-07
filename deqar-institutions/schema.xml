@@ -553,7 +553,7 @@
   <field name="country_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
   <field name="status_facet" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="crossborder_facet" type="boolean" multiValued="true" indexed="true" stored="true"/>
-  <field name="alternative_provider_facet" type="string" multiValued="false" indexed="true" stored="true"/>
+  <field name="alternative_provider_facet" type="boolean" default="false" multiValued="false" indexed="true" stored="true"/>
   <field name="qf_ehea_level_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
 
   <!-- Report indicator -->
