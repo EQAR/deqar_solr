@@ -525,9 +525,8 @@
 
   <!-- AP facets -->
   <field name="alternative_provider_covered_facet" type="boolean" default="false" indexed="true" multiValued="false" stored="true"/>
-  <field name="micro_credentials_covered_facet" type="boolean" default="false" indexed="true" multiValued="false" stored="true"/>
   <field name="degree_outcome_facet" type="boolean" default="false" indexed="true" multiValued="false" stored="true"/>
-  <field name="program_type_facet" type="string" default="false" indexed="true" multiValued="true" stored="true"/>
+  <field name="programme_type_facet" type="string" indexed="true" multiValued="true" stored="true"/>
 
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
