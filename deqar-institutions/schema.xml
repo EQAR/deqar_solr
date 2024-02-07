@@ -511,7 +511,7 @@
   <field name="place" type="string" indexed="false" stored="true"/>
   <field name="hierarchical_relationships" type="string" indexed="false" stored="true"/>
   <field name="qf_ehea_level" type="string" multiValued="true" indexed="false" stored="true"/>
-  <field name="alternative_provider" type="boolean" multiValued="false" indexed="false" stored="true"/>
+  <field name="other_provider" type="boolean" multiValued="false" indexed="false" stored="true"/>
 
   <!-- Search fields -->
   <field name="deqar_id_search" type="idSearch" uninvertible="true" indexed="true" stored="true"/>
@@ -553,7 +553,7 @@
   <field name="country_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
   <field name="status_facet" type="string" multiValued="true" indexed="true" stored="true"/>
   <field name="crossborder_facet" type="boolean" multiValued="true" indexed="true" stored="true"/>
-  <field name="alternative_provider_facet" type="boolean" default="false" multiValued="false" indexed="true" stored="true"/>
+  <field name="other_provider_facet" type="boolean" default="false" multiValued="false" indexed="true" stored="true"/>
   <field name="qf_ehea_level_facet" type="strings" multiValued="true" indexed="true" stored="true"/>
 
   <!-- Report indicator -->
